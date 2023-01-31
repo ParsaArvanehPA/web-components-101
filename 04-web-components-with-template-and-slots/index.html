@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script defer src="./main.js"></script>
+    </head>
+
+    <body>
+        <my-paragraph-just-template></my-paragraph-just-template>
+
+        <template id="my-paragraph-just-template">
+            <style>
+                p {
+                    color: white;
+                    background-color: #666;
+                    padding: 5px;
+                }
+            </style>
+
+            <p>My paragraph</p>
+        </template>
+
+        <my-paragraph-with-slots>
+            <span slot="my-text">Let's have some different text!</span>
+        </my-paragraph-with-slots>
+
+        <my-paragraph-with-slots>
+            <ul slot="my-text">
+                <li>Let's have some different text!</li>
+                <li>In a list!</li>
+            </ul>
+        </my-paragraph-with-slots>
+
+        <template id="my-paragraph-with-slots">
+            <style>
+                p {
+                    color: white;
+                    background-color: #666;
+                    padding: 5px;
+                }
+            </style>
+
+            <p><slot name="my-text">My default text</slot></p>
+        </template>
+    </body>
+</html>
